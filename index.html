@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Condicionales if / else if / else</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Condicionales</h1>
+        <p>Tocá el botón para ejecutar los 3 casos.</p>
+        <button id="ejecutar">Ejecutar casos</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        const resultado = document.getElementById("resultado");
+
+   
+        function mostrar(texto) {
+            console.log(texto);
+            const p = document.createElement("p");
+            p.textContent = texto;
+            resultado.appendChild(p);
+        }
+
+        function ejecutarCasos() {
+            resultado.innerHTML = "";
+
+
+            if (6 > 12) {
+                mostrar("Caso 1: primera condición verdadera");
+            } else if (6 > 20) {
+                mostrar("Caso 1: segunda condición verdadera");
+            } else {
+                mostrar("Caso 1: todas las expresiones son falsas");
+            }
+
+
+            if (12 < 6) {
+                mostrar("Caso 2: primera condición verdadera");
+            } else if (12 > 6) {
+                mostrar("Caso 2: segunda condición verdadera");
+            } else {
+                mostrar("Caso 2: todas las expresiones son falsas");
+            }
+
+        
+            if (6 < 12) {
+                mostrar("Caso 3: primera condición verdadera");
+            } else if (6 < 10) {
+                mostrar("Caso 3: segunda condición verdadera");
+            } else {
+                mostrar("Caso 3: todas las expresiones son falsas");
+            }
+        }
+
+        document.getElementById("ejecutar").addEventListener("click", ejecutarCasos);
+    </script>
+</body>
+</html>

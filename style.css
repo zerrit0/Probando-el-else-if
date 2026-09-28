@@ -1,0 +1,83 @@
+:root {
+    --azul-oscuro: #1f1a6e;
+    --azul: #3a2fa3;
+    --violeta: #7b5fd6;
+    --violeta-claro: #b9a6f2;
+    --piel: #fbeee6;
+    --negro: #1b1b24;
+    --gris: #8b8b96;
+    --rosa: #f08a8a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    color: var(--negro);
+    background: linear-gradient(160deg, var(--azul-oscuro), var(--azul) 55%, var(--violeta));
+}
+
+.contenedor {
+    width: 100%;
+    max-width: 480px;
+    padding: 32px 28px;
+    text-align: center;
+    background: var(--piel);
+    border: 3px solid var(--negro);
+    border-radius: 24px;
+    box-shadow: 8px 8px 0 var(--negro);
+}
+
+h1 {
+    margin: 0 0 8px;
+    color: var(--azul-oscuro);
+    font-size: 2rem;
+}
+
+.contenedor > p { color: var(--gris); margin: 0 0 20px; }
+
+button {
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(180deg, var(--violeta), var(--azul));
+    border: 3px solid var(--negro);
+    border-radius: 999px;
+    box-shadow: 0 4px 0 var(--negro);
+    cursor: pointer;
+    transition: transform .1s, box-shadow .1s, background .2s;
+}
+
+button:hover { background: linear-gradient(180deg, var(--violeta-claro), var(--violeta)); }
+
+button:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 var(--negro);
+}
+
+#resultado { margin-top: 24px; text-align: left; }
+
+#resultado p {
+    margin: 8px 0;
+    padding: 10px 14px;
+    background: #fff;
+    color: var(--negro);
+    border-left: 6px solid var(--rosa);
+    border-radius: 10px;
+    animation: entrar .3s ease both;
+}
+
+#resultado p:nth-child(2) { border-left-color: var(--violeta); animation-delay: .1s; }
+#resultado p:nth-child(3) { border-left-color: var(--azul); animation-delay: .2s; }
+
+@keyframes entrar {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: none; }
+}
